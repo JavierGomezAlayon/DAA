@@ -29,7 +29,7 @@ int main(int argc, char *argv[]) {
     std::cerr << "Error no se han introducido los datos correctamente" << std::endl;
     return 1;
   }
-// Inicializa la semilla para números aleatorios.
+  // Inicializa la semilla para números aleatorios.
   srand(static_cast<unsigned int>(time(nullptr)));
 
   // Abrimos el archivo CSV para escritura.
@@ -45,7 +45,7 @@ int main(int argc, char *argv[]) {
   // Inicializo el vector de estrategias de multiplicación.
   vector<Multiplicacion *> Estrategias = {new Multiplicacion_por_fila(), new Multiplicacion_por_columna()};
 
-  int size_limit = 500;
+  int size_limit = datos.limit;
   for (int redundancia = 0 ; redundancia < 1 ; redundancia++) {
     for (int size = 1; size <= size_limit; size += 1) {
       // Genera matrices aleatorias cuadradas A y B de tamaño "size".
@@ -65,7 +65,7 @@ int main(int argc, char *argv[]) {
       chrono::duration<double> durationCol = end - start;
       
       // Comprueba si las matrices son iguales.
-      cout << (Matrix_C1 == Matrix_C2);
+      // cout << (Matrix_C1 == Matrix_C2);
       
       // Muestra los tiempos en consola.
       cout << "Tamaño: " << size << " x " << size << "\n";

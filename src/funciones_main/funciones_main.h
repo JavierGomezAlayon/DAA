@@ -25,7 +25,7 @@ typedef vector<vector<int>> Matrix;
 
 struct Dato {
   bool correcto;
-  std::string fichero;
+  int limit;
 };
 
 Dato recoger_parametro(int argc, char *argv[]);

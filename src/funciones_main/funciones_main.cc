@@ -36,7 +36,7 @@ Dato recoger_parametro(int numero_argumentos, char *argv[]) {
         mostrar_ayuda();
         datos.correcto = true;
       } else {
-        datos.fichero = argv[1];
+        datos.limit = atoi(argv[1]);
       }
       return datos;
     default:
@@ -49,15 +49,15 @@ Dato recoger_parametro(int numero_argumentos, char *argv[]) {
  */
 void mostrar_ayuda() {
   std::cout << "\nEste programa se encarga de realizar la multiplicación de matrices mediante dos algoritmos distintos " << std::endl;
-  std::cout << "El programa recibe como argumentos el nombre del fichero que quieres que se escriba con el resultado " << std::endl;
-  std::cout << "Usage: ./Complejidad_computacional fichero.txt " << std::endl;
+  std::cout << "El programa recibe como argumentos el número límite de tamaño de las matrices " << std::endl;
+  std::cout << "Usage: ./Complejidad_computacional 250 " << std::endl;
 }
 
 /**
  * @brief Muestra una ayuda resumida del programa
  */
 void mostrar_ayuda_resumida() {
-  std::cout << "\nUsage: ./Complejidad_computacional fichero.txt" << std::endl;
+  std::cout << "\nUsage: ./Complejidad_computacional <número tamaño límite>" << std::endl;
   std::cout << "Usa el parámetro -h para más información" << std::endl;
 }
 
